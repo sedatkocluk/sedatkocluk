@@ -119,8 +119,15 @@
     .whatsapp-btn{border:0;cursor:pointer;background:#128c7e;color:#fff;padding:14px 20px;border-radius:14px;font-weight:850;font-size:15px}
     .contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
     footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
-    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800}
-    @media(max-width:900px){.nav-links{display:none}.menu-btn{display:block}.hero{padding-top:62px}.hero-grid,.about-grid{grid-template-columns:1fr}.dashboard{max-width:620px}.cards{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.testimonial-grid{grid-template-columns:1fr}.band{grid-template-columns:1fr}}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800;color:var(--navy);cursor:pointer}
+    .mobile-menu{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);box-shadow:0 18px 35px rgba(18,38,87,.10)}
+    .mobile-menu-inner{width:min(100% - 28px,1160px);margin:auto;padding:14px 0 18px;display:grid;gap:8px}
+    .mobile-menu a{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-radius:12px;color:var(--navy);font-weight:750;background:#fbfcff;border:1px solid #edf1f7}
+    .mobile-menu a:after{content:"›";font-size:20px;color:#8090aa}
+    .mobile-menu a.mobile-primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .mobile-menu a.mobile-primary:after{color:#fff}
+    .mobile-menu.open{display:block}
+    @media(max-width:900px){.nav{position:sticky}.nav-links{display:none}.menu-btn{display:inline-flex;align-items:center;gap:8px}.hero{padding-top:62px}.hero-grid,.about-grid{grid-template-columns:1fr}.dashboard{max-width:620px}.cards{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.testimonial-grid{grid-template-columns:1fr}.band{grid-template-columns:1fr}}
     @media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.site-logo{width:168px;max-height:46px}.footer-logo{width:165px}.hero{padding:52px 0 56px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-actions .btn{width:100%}.cards,.process-grid,.about-list,.form-grid,.pricing-grid,.review-grid{grid-template-columns:1fr}.field.full,.review-field.full{grid-column:auto}.application-form{padding:20px}section{padding:64px 0}.band{padding:30px 24px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
@@ -131,8 +138,22 @@
       <nav class="nav-links">
         <a href="#hizmetler">Hizmetler</a><a href="#sistem">Koçluk Sistemi</a><a href="#paketler">Paketler</a><a href="#yorumlar">Yorumlar</a><a href="#hakkimda">Hakkımda</a><a href="#sss">S.S.S.</a><a class="nav-cta" href="#basvuru">Başvuru Yap</a>
       </nav>
-      <a class="menu-btn" href="#basvuru">Başvuru</a>
+      <button class="menu-btn" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
+        <span>Menü</span><span aria-hidden="true">☰</span>
+      </button>
     </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobil menü">
+      <div class="mobile-menu-inner">
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#sistem">Koçluk Sistemi</a>
+        <a href="#paketler">Paketler &amp; Ücretlendirme</a>
+        <a href="#yorumlar">Öğrenci / Veli Yorumları</a>
+        <a href="#hakkimda">Hakkımda</a>
+        <a href="#sss">Sık Sorulan Sorular</a>
+        <a class="mobile-primary" href="#basvuru">Koçluk Başvurusu</a>
+      </div>
+    </nav>
   </header>
 
   <main>
@@ -403,6 +424,31 @@
   <footer><div class="container footer-inner"><div><img src="logo.png" alt="Sedat Koçluk" class="footer-logo"></div><div>© 2026 Sedat Polat. Tüm hakları saklıdır.</div></div></footer>
 
   <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', function(){
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.querySelector('span:last-child').textContent = isOpen ? '✕' : '☰';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.querySelector('span:last-child').textContent = '☰';
+      });
+    });
+
+    document.addEventListener('click', function(e){
+      if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.querySelector('span:last-child').textContent = '☰';
+      }
+    });
+
     document.getElementById('coachingForm').addEventListener('submit', function(e){
       e.preventDefault();
       const f = e.currentTarget;
