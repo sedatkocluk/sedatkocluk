@@ -88,6 +88,19 @@
     .testimonial-card h3{margin:10px 0 8px;color:var(--navy);font-size:18px}
     .testimonial-card p{margin:0;color:var(--muted);font-size:14px}
     .testimonial-note{margin-top:18px;padding:15px 17px;border:1px dashed #cfd9ef;border-radius:14px;color:var(--muted);font-size:13px;background:#fbfcff}
+    .review-submit{margin-top:28px;background:var(--soft);border:1px solid var(--line);border-radius:24px;padding:24px}
+    .review-submit h3{margin:0 0 8px;color:var(--navy);font-size:22px}
+    .review-submit>p{margin:0 0 18px;color:var(--muted);font-size:14px}
+    .review-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .review-field{display:flex;flex-direction:column;gap:7px}
+    .review-field.full{grid-column:1/-1}
+    .review-field label{font-size:13px;font-weight:800;color:var(--navy)}
+    .review-field input,.review-field select,.review-field textarea{width:100%;border:1px solid #dbe2ef;border-radius:13px;padding:13px 14px;font:inherit;color:var(--ink);background:#fff;outline:none}
+    .review-field textarea{min-height:130px;resize:vertical}
+    .review-consent{display:flex;align-items:flex-start;gap:9px;margin-top:14px;color:var(--muted);font-size:12px}
+    .review-consent input{margin-top:3px}
+    .review-actions{display:flex;justify-content:flex-end;margin-top:16px}
+    .review-btn{border:0;cursor:pointer;background:#128c7e;color:#fff;padding:13px 18px;border-radius:13px;font-weight:850;font-size:14px}
     .faq{background:var(--soft)}details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 18px;margin-bottom:10px}
     summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:800;color:var(--navy)}summary::-webkit-details-marker{display:none}
     details p{margin:0;padding:0 0 18px;color:var(--muted);font-size:14px}
@@ -108,7 +121,7 @@
     footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800}
     @media(max-width:900px){.nav-links{display:none}.menu-btn{display:block}.hero{padding-top:62px}.hero-grid,.about-grid{grid-template-columns:1fr}.dashboard{max-width:620px}.cards{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.testimonial-grid{grid-template-columns:1fr}.band{grid-template-columns:1fr}}
-    @media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.site-logo{width:168px;max-height:46px}.footer-logo{width:165px}.hero{padding:52px 0 56px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-actions .btn{width:100%}.cards,.process-grid,.about-list,.form-grid,.pricing-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.application-form{padding:20px}section{padding:64px 0}.band{padding:30px 24px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
+    @media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.site-logo{width:168px;max-height:46px}.footer-logo{width:165px}.hero{padding:52px 0 56px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-actions .btn{width:100%}.cards,.process-grid,.about-list,.form-grid,.pricing-grid,.review-grid{grid-template-columns:1fr}.field.full,.review-field.full{grid-column:auto}.application-form{padding:20px}section{padding:64px 0}.band{padding:30px 24px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
 <body>
@@ -239,15 +252,73 @@
       <div class="container">
         <div class="section-head">
           <div class="kicker">Öğrenci deneyimleri</div>
-          <h2>Gerçek geri bildirimleri şeffaf biçimde paylaşacağız.</h2>
-          <p>Bu alanda yalnızca gerçek öğrenci veya veli geri bildirimleri, gerekli izinler alınarak yayınlanacaktır.</p>
+          <h2>Yorumunu bırak, onaydan sonra sitede yayınlayalım.</h2>
+          <p>Öğrenci ve veliler bu bölümden deneyimlerini iletebilir. Yorumlar doğrudan yayına girmez; önce kontrol edilir, ardından izin verilen ad biçimiyle yayınlanır.</p>
         </div>
+
         <div class="testimonial-grid">
-          <article class="testimonial-card"><div class="quote">“</div><h3>Planlama deneyimi</h3><p>Öğrencilerin çalışma düzeni ve haftalık planlama sürecine ilişkin gerçek geri bildirimleri bu alanda yer alacak.</p></article>
-          <article class="testimonial-card"><div class="quote">“</div><h3>Takip ve analiz</h3><p>Deneme analizi, konu takibi ve program revizyonuna ilişkin doğrulanmış yorumlar burada paylaşılacak.</p></article>
-          <article class="testimonial-card"><div class="quote">“</div><h3>Tercih süreci</h3><p>Tercih danışmanlığı deneyimine ilişkin öğrenci ve veli değerlendirmeleri izinli şekilde eklenecek.</p></article>
+          <article class="testimonial-card"><div class="quote">“</div><h3>Yayınlanmış yorumlar</h3><p>Onaylanan gerçek öğrenci ve veli yorumları burada görünecek.</p></article>
+          <article class="testimonial-card"><div class="quote">“</div><h3>Şeffaflık</h3><p>Örnek veya uydurma yorum kullanılmaz. Yalnızca gerçek geri bildirimler yayınlanır.</p></article>
+          <article class="testimonial-card"><div class="quote">“</div><h3>Gizlilik seçeneği</h3><p>İstersen yorumun ad-soyadla, yalnızca baş harflerle veya anonim olarak yayınlanabilir.</p></article>
         </div>
-        <div class="testimonial-note">Not: Bu bölümde örnek veya uydurma öğrenci yorumu kullanılmıyor. Gerçek yorumları gönderdiğinde isimleri açık, baş harfli veya anonim biçimde ekleyebiliriz.</div>
+
+        <div class="review-submit">
+          <h3>Öğrenci / Veli Yorumu Bırak</h3>
+          <p>Formu doldurduğunda yorumun WhatsApp üzerinden Sedat Koçluk’a iletilir. Göndermeden önce mesajı kontrol edebilirsin.</p>
+
+          <form id="reviewForm">
+            <div class="review-grid">
+              <div class="review-field">
+                <label for="yorumAd">Ad Soyad *</label>
+                <input id="yorumAd" name="yorumAd" type="text" required placeholder="Adınız ve soyadınız">
+              </div>
+              <div class="review-field">
+                <label for="yorumRol">Kim olarak yorum yapıyorsunuz? *</label>
+                <select id="yorumRol" name="yorumRol" required>
+                  <option value="" selected disabled>Seçiniz</option>
+                  <option>Öğrenci</option>
+                  <option>Veli</option>
+                </select>
+              </div>
+              <div class="review-field">
+                <label for="yorumSinav">Hizmet / Sınav *</label>
+                <select id="yorumSinav" name="yorumSinav" required>
+                  <option value="" selected disabled>Seçiniz</option>
+                  <option>LGS Koçluğu</option>
+                  <option>YKS Koçluğu</option>
+                  <option>KPSS Koçluğu</option>
+                  <option>Tercih Danışmanlığı</option>
+                  <option>Diğer</option>
+                </select>
+              </div>
+              <div class="review-field">
+                <label for="yorumYayin">Yayınlanacak isim biçimi *</label>
+                <select id="yorumYayin" name="yorumYayin" required>
+                  <option value="" selected disabled>Seçiniz</option>
+                  <option>Ad Soyad</option>
+                  <option>Yalnızca adım</option>
+                  <option>Baş harflerim</option>
+                  <option>Anonim</option>
+                </select>
+              </div>
+              <div class="review-field full">
+                <label for="yorumMetin">Yorumunuz *</label>
+                <textarea id="yorumMetin" name="yorumMetin" required placeholder="Koçluk sürecinde sizin için ne değişti? Planlama, takip, iletişim veya tercih süreciyle ilgili deneyiminizi yazabilirsiniz."></textarea>
+              </div>
+            </div>
+
+            <label class="review-consent">
+              <input id="yorumOnay" type="checkbox" required>
+              <span>Yorumumun seçtiğim isim biçimiyle Sedat Koçluk sitesinde yayınlanabileceğini kabul ediyorum.</span>
+            </label>
+
+            <div class="review-actions">
+              <button class="review-btn" type="submit">WhatsApp ile Yorumu Gönder</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="testimonial-note">Gönderilen yorumlar otomatik olarak herkese açık olmaz. Yayınlanacak yorumlar önce kontrol edilir ve yalnızca göndericinin seçtiği isim/gizlilik biçimiyle siteye eklenir.</div>
       </div>
     </section>
 
@@ -349,6 +420,26 @@
         '',
         'Ek Not:',
         f.not.value.trim() || '-'
+      ].join('\n');
+      const url = 'https://wa.me/905454859134?text=' + encodeURIComponent(message);
+      window.location.href = url;
+    });
+
+    document.getElementById('reviewForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const f = e.currentTarget;
+      const message = [
+        'Yeni Öğrenci / Veli Yorumu',
+        '',
+        'Ad Soyad: ' + f.yorumAd.value.trim(),
+        'Yorum Sahibi: ' + f.yorumRol.value,
+        'Hizmet / Sınav: ' + f.yorumSinav.value,
+        'Yayınlanacak İsim: ' + f.yorumYayin.value,
+        '',
+        'Yorum:',
+        f.yorumMetin.value.trim(),
+        '',
+        'Yayın izni: Onaylandı'
       ].join('\n');
       const url = 'https://wa.me/905454859134?text=' + encodeURIComponent(message);
       window.location.href = url;
