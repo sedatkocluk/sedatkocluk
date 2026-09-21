@@ -72,12 +72,24 @@
     .faq{background:var(--soft)}details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 18px;margin-bottom:10px}
     summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:800;color:var(--navy)}summary::-webkit-details-marker{display:none}
     details p{margin:0;padding:0 0 18px;color:var(--muted);font-size:14px}
-    .contact-box{text-align:center;max-width:820px;margin:auto}.contact-box p{color:var(--muted);font-size:17px}
+    .contact-box{max-width:920px;margin:auto}.contact-box>p{text-align:center;color:var(--muted);font-size:17px}
+    .contact-box>.kicker,.contact-box>h2{text-align:center}
+    .application-form{margin-top:30px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:0 18px 45px rgba(18,38,87,.08)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:flex;flex-direction:column;gap:7px}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:13px;font-weight:800;color:var(--navy)}
+    .field input,.field select,.field textarea{width:100%;border:1px solid #dbe2ef;border-radius:13px;padding:13px 14px;font:inherit;color:var(--ink);background:#fff;outline:none;transition:.2s}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(47,109,246,.10)}
+    .field textarea{min-height:120px;resize:vertical}
+    .form-note{margin:16px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
+    .submit-row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:20px}
+    .whatsapp-btn{border:0;cursor:pointer;background:#128c7e;color:#fff;padding:14px 20px;border-radius:14px;font-weight:850;font-size:15px}
     .contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
     footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800}
     @media(max-width:900px){.nav-links{display:none}.menu-btn{display:block}.hero{padding-top:62px}.hero-grid,.about-grid{grid-template-columns:1fr}.dashboard{max-width:620px}.cards{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.band{grid-template-columns:1fr}}
-    @media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.site-logo{width:168px;max-height:46px}.footer-logo{width:165px}.hero{padding:52px 0 56px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-actions .btn{width:100%}.cards,.process-grid,.about-list{grid-template-columns:1fr}section{padding:64px 0}.band{padding:30px 24px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
+    @media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.site-logo{width:168px;max-height:46px}.footer-logo{width:165px}.hero{padding:52px 0 56px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-actions .btn{width:100%}.cards,.process-grid,.about-list,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.application-form{padding:20px}section{padding:64px 0}.band{padding:30px 24px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
 <body>
@@ -168,12 +180,81 @@
     <section id="basvuru">
       <div class="container contact-box">
         <div class="kicker">Başvuru</div><h2>Koçluk sürecini birlikte planlayalım.</h2>
-        <p>Başvuru ve iletişim formunu bir sonraki adımda aktif edeceğiz. WhatsApp, başvuru formu ve sosyal medya bağlantıları bu bölüme eklenecek.</p>
-        <div class="contact-actions"><a class="btn btn-primary" href="#anasayfa">Ana Sayfaya Dön</a><a class="btn btn-secondary" href="#hizmetler">Hizmetleri İncele</a></div>
+        <p>Formu doldurduğunda bilgiler WhatsApp mesajına dönüştürülür. Mesajı kontrol edip göndermeden hiçbir bilgi iletilmez.</p>
+
+        <form class="application-form" id="coachingForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="adsoyad">Ad Soyad *</label>
+              <input id="adsoyad" name="adsoyad" type="text" autocomplete="name" required placeholder="Adınız ve soyadınız">
+            </div>
+            <div class="field">
+              <label for="telefon">Telefon *</label>
+              <input id="telefon" name="telefon" type="tel" autocomplete="tel" required placeholder="05xx xxx xx xx">
+            </div>
+            <div class="field">
+              <label for="sinav">Hazırlandığınız sınav *</label>
+              <select id="sinav" name="sinav" required>
+                <option value="" selected disabled>Seçiniz</option>
+                <option>LGS</option>
+                <option>YKS</option>
+                <option>KPSS</option>
+                <option>Tercih Danışmanlığı</option>
+                <option>Diğer</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="sinif">Sınıf / Eğitim Durumu *</label>
+              <input id="sinif" name="sinif" type="text" required placeholder="Örn. 8. sınıf, 12. sınıf, mezun">
+            </div>
+            <div class="field full">
+              <label for="hedef">Hedefiniz</label>
+              <input id="hedef" name="hedef" type="text" placeholder="Örn. İstanbul Erkek Lisesi, Ege Psikoloji, KPSS 85+">
+            </div>
+            <div class="field full">
+              <label for="durum">Mevcut durumunuz</label>
+              <textarea id="durum" name="durum" placeholder="Netleriniz, zorlandığınız dersler, günlük çalışma süreniz veya paylaşmak istediğiniz kısa bilgiler..."></textarea>
+            </div>
+            <div class="field full">
+              <label for="not">Ek not</label>
+              <textarea id="not" name="not" placeholder="Koçluk sürecinden beklentiniz veya özellikle belirtmek istediğiniz bir konu varsa yazabilirsiniz."></textarea>
+            </div>
+          </div>
+          <div class="submit-row">
+            <p class="form-note">* Zorunlu alanlar. Form verileri bu site tarafından kaydedilmez; gönderim WhatsApp üzerinden sizin onayınızla gerçekleşir.</p>
+            <button class="whatsapp-btn" type="submit">WhatsApp ile Başvur</button>
+          </div>
+        </form>
+
+        <div class="contact-actions"><a class="btn btn-secondary" href="#anasayfa">Ana Sayfaya Dön</a><a class="btn btn-secondary" href="#hizmetler">Hizmetleri İncele</a></div>
       </div>
     </section>
   </main>
 
   <footer><div class="container footer-inner"><div><img src="logo.png" alt="Sedat Koçluk" class="footer-logo"></div><div>© 2026 Sedat Polat. Tüm hakları saklıdır.</div></div></footer>
+
+  <script>
+    document.getElementById('coachingForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const f = e.currentTarget;
+      const message = [
+        'Merhaba Sedat Koçluk, koçluk başvurusu yapmak istiyorum.',
+        '',
+        'Ad Soyad: ' + f.adsoyad.value.trim(),
+        'Telefon: ' + f.telefon.value.trim(),
+        'Sınav / Hizmet: ' + f.sinav.value,
+        'Sınıf / Eğitim Durumu: ' + f.sinif.value.trim(),
+        'Hedef: ' + (f.hedef.value.trim() || '-'),
+        '',
+        'Mevcut Durum:',
+        f.durum.value.trim() || '-',
+        '',
+        'Ek Not:',
+        f.not.value.trim() || '-'
+      ].join('\n');
+      const url = 'https://wa.me/905454859134?text=' + encodeURIComponent(message);
+      window.location.href = url;
+    });
+  </script>
 </body>
 </html>
