@@ -101,6 +101,19 @@
     .review-consent input{margin-top:3px}
     .review-actions{display:flex;justify-content:flex-end;margin-top:16px}
     .review-btn{border:0;cursor:pointer;background:#128c7e;color:#fff;padding:13px 18px;border-radius:13px;font-weight:850;font-size:14px}
+    .about-profile{display:grid;grid-template-columns:.85fr 1.15fr;gap:26px;align-items:stretch}
+    .about-card{background:linear-gradient(145deg,var(--navy),#234a98);color:#fff;border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+    .about-card h3{font-size:28px;margin:0 0 8px}
+    .about-card .about-title{font-weight:800;color:#dce8ff;margin-bottom:20px}
+    .about-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+    .about-badge{display:inline-flex;align-items:center;padding:8px 11px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(255,255,255,.08);font-size:12px;font-weight:800}
+    .about-content{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+    .about-content p{color:var(--muted);line-height:1.78;margin:0 0 15px}
+    .about-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+    .about-point{border:1px solid var(--line);border-radius:16px;padding:15px;background:#fbfcff}
+    .about-point strong{display:block;color:var(--navy);margin-bottom:5px}
+    .about-point span{font-size:13px;color:var(--muted);line-height:1.55}
+    .about-cert{margin-top:18px;padding:15px 16px;border-radius:15px;background:#eef5ff;border:1px solid #d7e5ff;color:var(--navy);font-weight:750;line-height:1.55}
     .faq{background:var(--soft)}details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 18px;margin-bottom:10px}
     summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:800;color:var(--navy)}summary::-webkit-details-marker{display:none}
     details p{margin:0;padding:0 0 18px;color:var(--muted);font-size:14px}
@@ -127,7 +140,7 @@
     .mobile-menu a.mobile-primary{background:var(--navy);color:#fff;border-color:var(--navy)}
     .mobile-menu a.mobile-primary:after{color:#fff}
     .mobile-menu.open{display:block}
-    @media(max-width:900px){.nav{position:sticky}.nav-links{display:none}.menu-btn{display:inline-flex;align-items:center;gap:8px}.hero{padding-top:62px}.hero-grid,.about-grid{grid-template-columns:1fr}.dashboard{max-width:620px}.cards{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.testimonial-grid{grid-template-columns:1fr}.band{grid-template-columns:1fr}}
+    @media(max-width:900px){.nav{position:sticky}.nav-links{display:none}.menu-btn{display:inline-flex;align-items:center;gap:8px}.hero{padding-top:62px}.hero-grid,.about-grid,.about-profile{grid-template-columns:1fr}.dashboard{max-width:620px}.cards{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.testimonial-grid{grid-template-columns:1fr}.about-points{grid-template-columns:1fr}.band{grid-template-columns:1fr}}
     @media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.site-logo{width:168px;max-height:46px}.footer-logo{width:165px}.hero{padding:52px 0 56px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-actions .btn{width:100%}.cards,.process-grid,.about-list,.form-grid,.pricing-grid,.review-grid{grid-template-columns:1fr}.field.full,.review-field.full{grid-column:auto}.application-form{padding:20px}section{padding:64px 0}.band{padding:30px 24px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
@@ -344,13 +357,59 @@
     </section>
 
     <section id="hakkimda">
-      <div class="container about-grid">
-        <div class="profile"><span class="profile-badge">SEDAT KOÇLUK</span><h3>Sedat Polat</h3><p>Öğrenci Koçluğu • LGS • YKS • KPSS • Tercih Danışmanlığı</p></div>
-        <div class="about-copy">
-          <div class="kicker">Hakkımda</div><h2>Öğrencinin yalnızca dersini değil, çalışma düzenini de takip eden bir sistem.</h2>
-          <p>Koçluk sürecinde amaç; öğrenciye sadece yapılacaklar listesi vermek değil, o listenin neden hazırlandığını anlamasını, kendi ilerlemesini görmesini ve çalışma disiplinini sürdürülebilir hâle getirmesini sağlamaktır.</p>
-          <p>Her öğrencinin başlangıç noktası farklıdır. Bu nedenle planlama, takip ve geri bildirim süreci kişiye göre şekillenir.</p>
-          <div class="about-list"><div>Haftalık çalışma planı</div><div>Deneme ve net takibi</div><div>Konu eksiklerinin belirlenmesi</div><div>Düzenli geri bildirim</div></div>
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Hakkımda</div>
+          <h2>Öğrencinin yalnızca ders programını değil, sürecin tamamını yönetmesine yardımcı oluyorum.</h2>
+          <p>Planlama, takip, motivasyon ve hedef yönetimini tek bir sistem içinde ele alan öğrenci odaklı bir koçluk yaklaşımı.</p>
+        </div>
+
+        <div class="about-profile">
+          <div class="about-card">
+            <h3>Sedat Polat</h3>
+            <div class="about-title">Eğitim Danışmanı &amp; Öğrenci Koçu</div>
+            <p>Öğrencilerin hedeflerine daha planlı, sürdürülebilir ve ölçülebilir bir çalışma sistemiyle ilerlemelerine destek oluyorum.</p>
+
+            <div class="about-badges">
+              <span class="about-badge">Eğitim Danışmanlığı</span>
+              <span class="about-badge">Öğrenci Koçluğu</span>
+              <span class="about-badge">LGS</span>
+              <span class="about-badge">YKS</span>
+              <span class="about-badge">KPSS</span>
+              <span class="about-badge">Tercih Danışmanlığı</span>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <p>Ben Sedat Polat. Eğitim danışmanlığı ve öğrenci koçluğu alanında öğrencilerin sınav hazırlık süreçlerini daha düzenli, kontrollü ve kişiye özel şekilde yürütmelerine destek veriyorum.</p>
+
+            <p>Her öğrencinin akademik seviyesi, hedefi, günlük yaşam düzeni ve çalışma alışkanlığı farklıdır. Bu nedenle tek tip programlar yerine öğrencinin mevcut durumunu analiz ederek uygulanabilir bir çalışma planı oluşturmayı; deneme ve soru performansını takip ederek planı gerektiğinde güncellemeyi esas alıyorum.</p>
+
+            <p>Koçluk sürecinde yalnızca “bugün kaç soru çözüldü?” sorusuna odaklanmıyorum. Zaman yönetimi, çalışma disiplini, eksik konuların belirlenmesi, deneme analizi, hedef takibi ve motivasyonun sürdürülebilir olması da sürecin temel parçalarıdır.</p>
+
+            <div class="about-cert">
+              Üniversite sertifikalı Eğitim Danışmanlığı ve Öğrenci Koçluğu eğitimlerine sahibim. Bu alandaki eğitimimi, öğrencilerin bireysel ihtiyaçlarına göre yapılandırılmış bir takip sistemiyle birleştiriyorum.
+            </div>
+
+            <div class="about-points">
+              <div class="about-point">
+                <strong>Kişiye Özel Planlama</strong>
+                <span>Öğrencinin seviyesi, hedefi ve günlük çalışma kapasitesine göre program hazırlanır.</span>
+              </div>
+              <div class="about-point">
+                <strong>Düzenli Takip</strong>
+                <span>Çalışma, soru, deneme ve konu ilerleyişi düzenli olarak değerlendirilir.</span>
+              </div>
+              <div class="about-point">
+                <strong>Analiz ve Revizyon</strong>
+                <span>İlerleme yavaşladığında veya ihtiyaç değiştiğinde program yeniden düzenlenir.</span>
+              </div>
+              <div class="about-point">
+                <strong>Hedef Odaklı Süreç</strong>
+                <span>LGS, YKS, KPSS ve tercih dönemlerinde öğrencinin hedefine göre yol haritası oluşturulur.</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
