@@ -69,6 +69,25 @@
     .profile h3{font-size:30px;margin:16px 0 4px}.profile p{margin:0;color:#d9e4ff}
     .about-copy p{color:var(--muted);font-size:16px}.about-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
     .about-list div{padding:15px 16px;border:1px solid var(--line);border-radius:15px;font-size:14px;font-weight:700;background:#fff}
+    .pricing{background:var(--soft)}
+    .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .price-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;min-height:320px;box-shadow:0 12px 30px rgba(18,38,87,.05)}
+    .price-card.featured{border-color:#b8cdfd;box-shadow:0 18px 42px rgba(47,109,246,.12)}
+    .price-tag{display:inline-flex;width:max-content;padding:6px 9px;border-radius:999px;background:#eef4ff;color:#315fb9;font-size:11px;font-weight:850;margin-bottom:16px}
+    .price-card h3{margin:0 0 8px;color:var(--navy);font-size:21px}
+    .price-card p{margin:0 0 18px;color:var(--muted);font-size:14px}
+    .price-list{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px}
+    .price-list li{font-size:13px;color:#4f5d75;display:flex;gap:8px}
+    .price-list li:before{content:"✓";color:var(--green);font-weight:900}
+    .price-bottom{margin-top:auto;border-top:1px solid var(--line);padding-top:18px}
+    .price-bottom strong{display:block;color:var(--navy);font-size:18px;margin-bottom:12px}
+    .testimonials{background:#fff}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .testimonial-card{border:1px solid var(--line);border-radius:22px;padding:24px;background:linear-gradient(180deg,#fff,#fbfcff)}
+    .testimonial-card .quote{font-size:38px;line-height:1;color:#cfd9ef;font-weight:900}
+    .testimonial-card h3{margin:10px 0 8px;color:var(--navy);font-size:18px}
+    .testimonial-card p{margin:0;color:var(--muted);font-size:14px}
+    .testimonial-note{margin-top:18px;padding:15px 17px;border:1px dashed #cfd9ef;border-radius:14px;color:var(--muted);font-size:13px;background:#fbfcff}
     .faq{background:var(--soft)}details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 18px;margin-bottom:10px}
     summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:800;color:var(--navy)}summary::-webkit-details-marker{display:none}
     details p{margin:0;padding:0 0 18px;color:var(--muted);font-size:14px}
@@ -88,8 +107,8 @@
     .contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
     footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800}
-    @media(max-width:900px){.nav-links{display:none}.menu-btn{display:block}.hero{padding-top:62px}.hero-grid,.about-grid{grid-template-columns:1fr}.dashboard{max-width:620px}.cards{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.band{grid-template-columns:1fr}}
-    @media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.site-logo{width:168px;max-height:46px}.footer-logo{width:165px}.hero{padding:52px 0 56px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-actions .btn{width:100%}.cards,.process-grid,.about-list,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.application-form{padding:20px}section{padding:64px 0}.band{padding:30px 24px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
+    @media(max-width:900px){.nav-links{display:none}.menu-btn{display:block}.hero{padding-top:62px}.hero-grid,.about-grid{grid-template-columns:1fr}.dashboard{max-width:620px}.cards{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.testimonial-grid{grid-template-columns:1fr}.band{grid-template-columns:1fr}}
+    @media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.site-logo{width:168px;max-height:46px}.footer-logo{width:165px}.hero{padding:52px 0 56px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-actions .btn{width:100%}.cards,.process-grid,.about-list,.form-grid,.pricing-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.application-form{padding:20px}section{padding:64px 0}.band{padding:30px 24px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
 <body>
@@ -97,7 +116,7 @@
     <div class="container nav-inner">
       <a class="brand" href="#anasayfa" aria-label="Sedat Koçluk ana sayfa"><img src="logo.png" alt="Sedat Koçluk - LGS, YKS, KPSS ve Tercih Danışmanlığı" class="site-logo"></a>
       <nav class="nav-links">
-        <a href="#hizmetler">Hizmetler</a><a href="#sistem">Koçluk Sistemi</a><a href="#hakkimda">Hakkımda</a><a href="#sss">S.S.S.</a><a class="nav-cta" href="#basvuru">Başvuru Yap</a>
+        <a href="#hizmetler">Hizmetler</a><a href="#sistem">Koçluk Sistemi</a><a href="#paketler">Paketler</a><a href="#yorumlar">Yorumlar</a><a href="#hakkimda">Hakkımda</a><a href="#sss">S.S.S.</a><a class="nav-cta" href="#basvuru">Başvuru Yap</a>
       </nav>
       <a class="menu-btn" href="#basvuru">Başvuru</a>
     </div>
@@ -155,6 +174,83 @@
       <div class="container"><div class="band"><div><h2>Hedef belli. Şimdi sistemi kurma zamanı.</h2><p>Dağınık çalışma yerine neyi, ne zaman ve neden yaptığını bildiğin kontrollü bir hazırlık süreci oluştur.</p></div><a class="btn" href="#basvuru">Başvuruya Geç</a></div></div>
     </section>
 
+
+    <section class="pricing" id="paketler">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Paketler ve ücretlendirme</div>
+          <h2>İhtiyaca göre şekillenen koçluk seçenekleri.</h2>
+          <p>Koçluk kapsamı öğrencinin sınav türüne, mevcut durumuna ve ihtiyaç duyduğu takip yoğunluğuna göre belirlenir. Güncel ücret bilgisi başvuru sonrasında netleştirilir.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="price-tag">LGS</span>
+            <h3>LGS Koçluğu</h3>
+            <p>Ortaokul temposuna uyumlu, sınav sürecini düzenli ve ölçülebilir hâle getiren takip sistemi.</p>
+            <ul class="price-list">
+              <li>Haftalık çalışma planı</li>
+              <li>Konu ve soru takibi</li>
+              <li>Deneme analizi</li>
+              <li>Plan revizyonu</li>
+            </ul>
+            <div class="price-bottom"><strong>Ücret için başvur</strong><a class="btn btn-secondary" href="#basvuru">Bilgi Al</a></div>
+          </article>
+          <article class="price-card featured">
+            <span class="price-tag">YKS</span>
+            <h3>YKS Koçluğu</h3>
+            <p>TYT ve AYT hazırlığını tek sistemde takip ederek ilerlemeyi haftalık verilerle değerlendiren yapı.</p>
+            <ul class="price-list">
+              <li>TYT–AYT planlaması</li>
+              <li>Net ve deneme takibi</li>
+              <li>Eksik konu analizi</li>
+              <li>Haftalık revizyon</li>
+            </ul>
+            <div class="price-bottom"><strong>Ücret için başvur</strong><a class="btn btn-primary" href="#basvuru">Bilgi Al</a></div>
+          </article>
+          <article class="price-card">
+            <span class="price-tag">KPSS</span>
+            <h3>KPSS Koçluğu</h3>
+            <p>Ders dağılımı, tekrar düzeni ve soru çözüm performansını kontrollü biçimde takip eden program.</p>
+            <ul class="price-list">
+              <li>Ders ve konu planı</li>
+              <li>Tekrar sistemi</li>
+              <li>Soru performansı takibi</li>
+              <li>Program güncellemesi</li>
+            </ul>
+            <div class="price-bottom"><strong>Ücret için başvur</strong><a class="btn btn-secondary" href="#basvuru">Bilgi Al</a></div>
+          </article>
+          <article class="price-card">
+            <span class="price-tag">TERCİH</span>
+            <h3>Tercih Danışmanlığı</h3>
+            <p>Puan, sıralama, bölüm, şehir ve kurum seçeneklerini birlikte değerlendirerek daha sistemli tercih süreci.</p>
+            <ul class="price-list">
+              <li>Puan ve sıralama değerlendirmesi</li>
+              <li>Bölüm ve şehir karşılaştırması</li>
+              <li>Tercih listesi planlama</li>
+              <li>Son kontrol</li>
+            </ul>
+            <div class="price-bottom"><strong>Ücret için başvur</strong><a class="btn btn-secondary" href="#basvuru">Bilgi Al</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="yorumlar">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Öğrenci deneyimleri</div>
+          <h2>Gerçek geri bildirimleri şeffaf biçimde paylaşacağız.</h2>
+          <p>Bu alanda yalnızca gerçek öğrenci veya veli geri bildirimleri, gerekli izinler alınarak yayınlanacaktır.</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card"><div class="quote">“</div><h3>Planlama deneyimi</h3><p>Öğrencilerin çalışma düzeni ve haftalık planlama sürecine ilişkin gerçek geri bildirimleri bu alanda yer alacak.</p></article>
+          <article class="testimonial-card"><div class="quote">“</div><h3>Takip ve analiz</h3><p>Deneme analizi, konu takibi ve program revizyonuna ilişkin doğrulanmış yorumlar burada paylaşılacak.</p></article>
+          <article class="testimonial-card"><div class="quote">“</div><h3>Tercih süreci</h3><p>Tercih danışmanlığı deneyimine ilişkin öğrenci ve veli değerlendirmeleri izinli şekilde eklenecek.</p></article>
+        </div>
+        <div class="testimonial-note">Not: Bu bölümde örnek veya uydurma öğrenci yorumu kullanılmıyor. Gerçek yorumları gönderdiğinde isimleri açık, baş harfli veya anonim biçimde ekleyebiliriz.</div>
+      </div>
+    </section>
+
     <section id="hakkimda">
       <div class="container about-grid">
         <div class="profile"><span class="profile-badge">SEDAT KOÇLUK</span><h3>Sedat Polat</h3><p>Öğrenci Koçluğu • LGS • YKS • KPSS • Tercih Danışmanlığı</p></div>
@@ -174,6 +270,8 @@
         <details><summary>Her öğrenciye aynı program mı veriliyor?</summary><p>Hayır. Ders düzeyi, hedef, günlük çalışma süresi, okul veya iş düzeni gibi değişkenlere göre program kişiselleştirilir.</p></details>
         <details><summary>Deneme sonuçları nasıl değerlendiriliyor?</summary><p>Doğru, yanlış ve boş sayılarının yanında konu eksikleri, dikkatsizlik kaynaklı hatalar ve zaman yönetimi sorunları da değerlendirilir.</p></details>
         <details><summary>Tercih döneminde destek veriliyor mu?</summary><p>Evet. Puan, sıralama, bölüm, şehir ve kurum seçenekleri birlikte değerlendirilerek tercih süreci planlanabilir.</p></details>
+        <details><summary>Koçluk ücretleri ne kadar?</summary><p>Ücret; sınav türü, ihtiyaç duyulan takip kapsamı ve hizmetin niteliğine göre belirlenir. Güncel ücret bilgisi başvuru sonrasında paylaşılır.</p></details>
+        <details><summary>Başvuru yaptıktan sonra ne oluyor?</summary><p>Başvuru formundaki bilgiler WhatsApp üzerinden iletilir. Ardından öğrencinin hedefi, mevcut durumu ve ihtiyaçları değerlendirilerek uygun çalışma sistemi planlanır.</p></details>
       </div>
     </section>
 
