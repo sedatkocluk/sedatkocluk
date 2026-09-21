@@ -141,6 +141,18 @@
     .submit-row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:20px}
     .whatsapp-btn{border:0;cursor:pointer;background:#128c7e;color:#fff;padding:14px 20px;border-radius:14px;font-weight:850;font-size:15px}
     .contact-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .contact-trust{background:var(--navy);color:#fff}
+    .contact-trust .section-head h2{color:#fff}
+    .contact-trust .section-head p{color:#d9e4ff}
+    .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .contact-card{display:block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:20px;transition:.2s ease}
+    .contact-card:hover{transform:translateY(-3px);background:rgba(255,255,255,.12)}
+    .contact-card small{display:block;color:#aebfe7;font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+    .contact-card strong{display:block;color:#fff;font-size:16px;line-height:1.45;word-break:break-word}
+    .trust-note{margin-top:18px;color:#c7d5f2;font-size:12px;line-height:1.6}
+    .footer-links{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    .footer-links a{font-weight:750;color:var(--navy)}
+    .footer-links a:hover{color:var(--blue)}
     footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.menu-btn{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:800;color:var(--navy);cursor:pointer}
     .mobile-menu{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);box-shadow:0 18px 35px rgba(18,38,87,.10)}
@@ -151,7 +163,7 @@
     .mobile-menu a.mobile-primary:after{color:#fff}
     .mobile-menu.open{display:block}
     @media(max-width:900px){.nav{position:sticky}.nav-links{display:none}.menu-btn{display:inline-flex;align-items:center;gap:8px}.hero{padding-top:62px}.hero-grid,.about-grid,.about-profile{grid-template-columns:1fr}.dashboard{max-width:620px}.cards{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.testimonial-grid{grid-template-columns:1fr}.about-points,.cert-showcase{grid-template-columns:1fr}.band{grid-template-columns:1fr}}
-    @media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.site-logo{width:168px;max-height:46px}.footer-logo{width:165px}.hero{padding:52px 0 56px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-actions .btn{width:100%}.cards,.process-grid,.about-list,.form-grid,.pricing-grid,.review-grid{grid-template-columns:1fr}.field.full,.review-field.full{grid-column:auto}.application-form{padding:20px}section{padding:64px 0}.band{padding:30px 24px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
+    @media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.site-logo{width:168px;max-height:46px}.footer-logo{width:165px}.hero{padding:52px 0 56px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-actions .btn{width:100%}.cards,.process-grid,.about-list,.form-grid,.pricing-grid,.review-grid,.contact-grid{grid-template-columns:1fr}.field.full,.review-field.full{grid-column:auto}.application-form{padding:20px}section{padding:64px 0}.band{padding:30px 24px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}.footer-links{gap:10px}}
   </style>
 </head>
 <body>
@@ -159,7 +171,7 @@
     <div class="container nav-inner">
       <a class="brand" href="#anasayfa" aria-label="Sedat Koçluk ana sayfa"><img src="logo.png" alt="Sedat Koçluk - LGS, YKS, KPSS ve Tercih Danışmanlığı" class="site-logo"></a>
       <nav class="nav-links">
-        <a href="#hizmetler">Hizmetler</a><a href="#sistem">Koçluk Sistemi</a><a href="#paketler">Paketler</a><a href="#yorumlar">Yorumlar</a><a href="#hakkimda">Hakkımda</a><a href="#sss">S.S.S.</a><a class="nav-cta" href="#basvuru">Başvuru Yap</a>
+        <a href="#hizmetler">Hizmetler</a><a href="#sistem">Koçluk Sistemi</a><a href="#paketler">Paketler</a><a href="#yorumlar">Yorumlar</a><a href="#hakkimda">Hakkımda</a><a href="#sss">S.S.S.</a><a href="#iletisim">İletişim</a><a class="nav-cta" href="#basvuru">Başvuru Yap</a>
       </nav>
       <button class="menu-btn" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
         <span>Menü</span><span aria-hidden="true">☰</span>
@@ -174,6 +186,8 @@
         <a href="#yorumlar">Öğrenci / Veli Yorumları</a>
         <a href="#hakkimda">Hakkımda</a>
         <a href="#sss">Sık Sorulan Sorular</a>
+        <a href="#iletisim">İletişim</a>
+        <a href="gizlilik.html">Gizlilik &amp; KVKK</a>
         <a class="mobile-primary" href="#basvuru">Koçluk Başvurusu</a>
       </div>
     </nav>
@@ -507,7 +521,48 @@
     </section>
   </main>
 
-  <footer><div class="container footer-inner"><div><img src="logo.png" alt="Sedat Koçluk" class="footer-logo"></div><div>© 2026 Sedat Polat. Tüm hakları saklıdır.</div></div></footer>
+    <section class="contact-trust" id="iletisim">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker" style="color:#8fb3ff">İletişim</div>
+          <h2>Soruların için doğrudan ulaşabilirsin.</h2>
+          <p>Koçluk, paketler, tercih danışmanlığı veya başvuru süreciyle ilgili iletişim kanallarını kullanabilirsin.</p>
+        </div>
+
+        <div class="contact-grid">
+          <a class="contact-card" href="https://wa.me/905454859134" target="_blank" rel="noopener">
+            <small>WhatsApp</small>
+            <strong>0545 485 91 34</strong>
+          </a>
+          <a class="contact-card" href="mailto:sedatpolat89@gmail.com">
+            <small>E-posta</small>
+            <strong>sedatpolat89@gmail.com</strong>
+          </a>
+          <a class="contact-card" href="https://www.instagram.com/ogrencikocusedat/" target="_blank" rel="noopener">
+            <small>Instagram · Koçluk</small>
+            <strong>@ogrencikocusedat</strong>
+          </a>
+          <a class="contact-card" href="https://www.instagram.com/spolat89/" target="_blank" rel="noopener">
+            <small>Instagram · Kişisel</small>
+            <strong>@spolat89</strong>
+          </a>
+        </div>
+
+        <p class="trust-note">Başvuru ve yorum formlarındaki bilgiler bu web sitesi tarafından veritabanına kaydedilmez; kullanıcı onayıyla WhatsApp'a yönlendirilir. Kişisel verilerin işlenmesine ilişkin ayrıntılar için Gizlilik &amp; KVKK metnini inceleyebilirsin.</p>
+      </div>
+    </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><img src="logo.png" alt="Sedat Koçluk" class="footer-logo"></div>
+      <div class="footer-links">
+        <a href="mailto:sedatpolat89@gmail.com">E-posta</a>
+        <a href="#iletisim">İletişim</a>
+        <a href="gizlilik.html">Gizlilik &amp; KVKK</a>
+      </div>
+      <div>© 2026 Sedat Polat. Tüm hakları saklıdır.</div>
+    </div>
+  </footer>
 
   <script>
     const menuToggle = document.getElementById('menuToggle');
