@@ -114,6 +114,16 @@
     .about-point strong{display:block;color:var(--navy);margin-bottom:5px}
     .about-point span{font-size:13px;color:var(--muted);line-height:1.55}
     .about-cert{margin-top:18px;padding:15px 16px;border-radius:15px;background:#eef5ff;border:1px solid #d7e5ff;color:var(--navy);font-weight:750;line-height:1.55}
+    .cert-showcase{margin-top:26px;display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center;background:var(--soft);border:1px solid var(--line);border-radius:24px;padding:22px}
+    .cert-visual{background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:0 12px 30px rgba(18,38,87,.07)}
+    .cert-visual img{display:block;width:100%;height:auto;border-radius:12px}
+    .cert-copy h3{margin:0 0 10px;color:var(--navy);font-size:24px}
+    .cert-copy p{margin:0 0 12px;color:var(--muted);line-height:1.7}
+    .cert-meta{display:grid;gap:9px;margin:16px 0}
+    .cert-meta div{padding:11px 12px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:13px;color:#4f5d75}
+    .cert-meta strong{color:var(--navy)}
+    .cert-note{font-size:12px!important;color:#7a8497!important;margin-top:12px!important}
+
     .faq{background:var(--soft)}details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 18px;margin-bottom:10px}
     summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:800;color:var(--navy)}summary::-webkit-details-marker{display:none}
     details p{margin:0;padding:0 0 18px;color:var(--muted);font-size:14px}
@@ -140,7 +150,7 @@
     .mobile-menu a.mobile-primary{background:var(--navy);color:#fff;border-color:var(--navy)}
     .mobile-menu a.mobile-primary:after{color:#fff}
     .mobile-menu.open{display:block}
-    @media(max-width:900px){.nav{position:sticky}.nav-links{display:none}.menu-btn{display:inline-flex;align-items:center;gap:8px}.hero{padding-top:62px}.hero-grid,.about-grid,.about-profile{grid-template-columns:1fr}.dashboard{max-width:620px}.cards{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.testimonial-grid{grid-template-columns:1fr}.about-points{grid-template-columns:1fr}.band{grid-template-columns:1fr}}
+    @media(max-width:900px){.nav{position:sticky}.nav-links{display:none}.menu-btn{display:inline-flex;align-items:center;gap:8px}.hero{padding-top:62px}.hero-grid,.about-grid,.about-profile{grid-template-columns:1fr}.dashboard{max-width:620px}.cards{grid-template-columns:1fr 1fr}.process-grid{grid-template-columns:1fr 1fr}.pricing-grid{grid-template-columns:1fr 1fr}.testimonial-grid{grid-template-columns:1fr}.about-points,.cert-showcase{grid-template-columns:1fr}.band{grid-template-columns:1fr}}
     @media(max-width:600px){.container{width:min(100% - 28px,1160px)}.nav-inner{height:68px}.site-logo{width:168px;max-height:46px}.footer-logo{width:165px}.hero{padding:52px 0 56px}h1{font-size:43px}.hero-lead{font-size:16px}.hero-actions .btn{width:100%}.cards,.process-grid,.about-list,.form-grid,.pricing-grid,.review-grid{grid-template-columns:1fr}.field.full,.review-field.full{grid-column:auto}.application-form{padding:20px}section{padding:64px 0}.band{padding:30px 24px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
@@ -388,7 +398,7 @@
             <p>Koçluk sürecinde yalnızca “bugün kaç soru çözüldü?” sorusuna odaklanmıyorum. Zaman yönetimi, çalışma disiplini, eksik konuların belirlenmesi, deneme analizi, hedef takibi ve motivasyonun sürdürülebilir olması da sürecin temel parçalarıdır.</p>
 
             <div class="about-cert">
-              Üniversite sertifikalı Eğitim Danışmanlığı ve Öğrenci Koçluğu eğitimlerine sahibim. Bu alandaki eğitimimi, öğrencilerin bireysel ihtiyaçlarına göre yapılandırılmış bir takip sistemiyle birleştiriyorum.
+              Ataşehir Adıgüzel Meslek Yüksekokulu Sürekli Eğitim Uygulama ve Araştırma Merkezi tarafından gerçekleştirilen 240 saatlik Eğitim Danışmanlığı ve Öğrenci Koçluğu Eğitimi sertifika programını tamamladım.
             </div>
 
             <div class="about-points">
@@ -409,6 +419,23 @@
                 <span>LGS, YKS, KPSS ve tercih dönemlerinde öğrencinin hedefine göre yol haritası oluşturulur.</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="cert-showcase" id="sertifika">
+          <div class="cert-visual">
+            <img src="sertifika.png" alt="Sedat Polat Eğitim Danışmanlığı ve Öğrenci Koçluğu eğitim sertifikası">
+          </div>
+          <div class="cert-copy">
+            <div class="kicker">Sertifikam</div>
+            <h3>240 Saatlik Eğitim Danışmanlığı ve Öğrenci Koçluğu Eğitimi</h3>
+            <p>Eğitim programı Ataşehir Adıgüzel Meslek Yüksekokulu Sürekli Eğitim Uygulama ve Araştırma Merkezi tarafından gerçekleştirilmiştir.</p>
+            <div class="cert-meta">
+              <div><strong>Eğitim dönemi:</strong> 10.06.2026 - 10.08.2026</div>
+              <div><strong>Belge veriliş tarihi:</strong> 25.08.2026</div>
+              <div><strong>Doğrulama:</strong> Orijinal belge e-Devlet belge doğrulama sistemi üzerinden kontrol edilebilir.</div>
+            </div>
+            <p class="cert-note">Web sitesinde yayınlanan görselde T.C. kimlik numarası, barkod numarası ve QR doğrulama kodu kişisel veri güvenliği amacıyla gizlenmiştir. Belge bir eğitim sertifikasıdır; diploma veya akademik unvan niteliği taşımaz.</p>
           </div>
         </div>
       </div>
