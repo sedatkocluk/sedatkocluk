@@ -1,4 +1,12 @@
 <!doctype html><html lang="tr"><head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RM4X8GZ52O"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RM4X8GZ52O');
+  </script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>YKS Tercih Danışmanlığı | Tercih Listesi | Sedat Koçluk</title>
 <meta name="description" content="Puan, sıralama, bölüm, şehir ve kurum seçeneklerini birlikte değerlendirerek tercih listesi oluşturma desteği.">
@@ -27,9 +35,19 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 </style></head><body>
 <header><div class="container nav"><a href="/"><img src="/logo.png" class="logo" alt="Sedat Koçluk"></a><a class="btn" href="/#basvuru">Başvuru Yap</a></div></header>
 <main><section class="hero"><div class="container grid"><div><div class="kicker">Sedat Koçluk</div><h1>Tercih Danışmanlığı</h1><p>Tercih döneminde puan, sıralama, bölüm, şehir ve kurum seçeneklerini birlikte değerlendirerek daha düzenli bir liste oluşturma desteği.</p></div>
-<aside class="price"><small>Başlangıç fiyatı</small><strong>250 TL</strong><a href="https://wa.me/905454859134">WhatsApp ile Bilgi Al</a></aside></div></section>
+<aside class="price"><small>Başlangıç fiyatı</small><strong>250 TL</strong><a id="whatsappLead" href="https://wa.me/905454859134">WhatsApp ile Bilgi Al</a></aside></div></section>
 <section><div class="container"><h2>Bu hizmette neler var?</h2><ul><li>Puan ve sıralama değerlendirmesi</li><li>Bölüm karşılaştırması</li><li>Şehir seçenekleri</li><li>Üniversite alternatifleri</li><li>Tercih listesi planlama</li><li>Son kontrol</li></ul></div></section>
 <section class="soft"><div class="container"><h2>Nasıl ilerliyoruz?</h2><p>Önce mevcut durum, hedef, çalışma düzeni ve ihtiyaçlar değerlendirilir. Ardından uygulanabilir bir plan hazırlanır; konu, soru ve deneme performansı takip edilerek gerektiğinde program güncellenir.</p></div></section>
 <section><div class="container"><div class="cta"><h2>Koçluk sürecini birlikte planlayalım.</h2><p>Hedefini ve mevcut durumunu paylaş; sana uygun çalışma sistemini birlikte belirleyelim.</p><a href="/#basvuru">Başvuru Formuna Git</a></div></div></section></main>
 <footer><div class="container">© 2026 Sedat Polat · <a href="/gizlilik.html">Gizlilik & KVKK</a></div></footer>
+<script>
+document.getElementById('whatsappLead')?.addEventListener('click', function(){
+  if (typeof gtag === 'function') {
+    gtag('event', 'generate_lead', {
+      lead_type: 'service_whatsapp',
+      service_type: 'Tercih Danışmanlığı'
+    });
+  }
+});
+</script>
 </body></html>

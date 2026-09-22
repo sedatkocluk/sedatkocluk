@@ -35,9 +35,19 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 </style></head><body>
 <header><div class="container nav"><a href="/"><img src="/logo.png" class="logo" alt="Sedat Koçluk"></a><a class="btn" href="/#basvuru">Başvuru Yap</a></div></header>
 <main><section class="hero"><div class="container grid"><div><div class="kicker">Sedat Koçluk</div><h1>KPSS Koçluğu</h1><p>KPSS hazırlığında ders yükünü dengeli dağıtmak, tekrarları düzenlemek ve soru performansını takip etmek için planlı sistem.</p></div>
-<aside class="price"><small>Başlangıç fiyatı</small><strong>750 TL</strong><a href="https://wa.me/905454859134">WhatsApp ile Bilgi Al</a></aside></div></section>
+<aside class="price"><small>Başlangıç fiyatı</small><strong>750 TL</strong><a id="whatsappLead" href="https://wa.me/905454859134">WhatsApp ile Bilgi Al</a></aside></div></section>
 <section><div class="container"><h2>Bu hizmette neler var?</h2><ul><li>Ders ve konu planı</li><li>Tekrar sistemi</li><li>Soru performansı</li><li>Deneme değerlendirmesi</li><li>Zaman planlaması</li><li>Program güncellemesi</li></ul></div></section>
 <section class="soft"><div class="container"><h2>Nasıl ilerliyoruz?</h2><p>Önce mevcut durum, hedef, çalışma düzeni ve ihtiyaçlar değerlendirilir. Ardından uygulanabilir bir plan hazırlanır; konu, soru ve deneme performansı takip edilerek gerektiğinde program güncellenir.</p></div></section>
 <section><div class="container"><div class="cta"><h2>Koçluk sürecini birlikte planlayalım.</h2><p>Hedefini ve mevcut durumunu paylaş; sana uygun çalışma sistemini birlikte belirleyelim.</p><a href="/#basvuru">Başvuru Formuna Git</a></div></div></section></main>
 <footer><div class="container">© 2026 Sedat Polat · <a href="/gizlilik.html">Gizlilik & KVKK</a></div></footer>
+<script>
+document.getElementById('whatsappLead')?.addEventListener('click', function(){
+  if (typeof gtag === 'function') {
+    gtag('event', 'generate_lead', {
+      lead_type: 'service_whatsapp',
+      service_type: 'KPSS Koçluğu'
+    });
+  }
+});
+</script>
 </body></html>

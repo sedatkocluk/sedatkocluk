@@ -682,7 +682,13 @@
         f.not.value.trim() || '-'
       ].join('\n');
       const url = 'https://wa.me/905454859134?text=' + encodeURIComponent(message);
-      window.location.href = url;
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', {
+          lead_type: 'coaching_application',
+          service_type: f.sinav.value || 'Bilinmiyor'
+        });
+      }
+      setTimeout(function(){ window.location.href = url; }, 250);
     });
 
     document.getElementById('reviewForm').addEventListener('submit', function(e){
@@ -702,7 +708,24 @@
         'Yayın izni: Onaylandı'
       ].join('\n');
       const url = 'https://wa.me/905454859134?text=' + encodeURIComponent(message);
-      window.location.href = url;
+      if (typeof gtag === 'function') {
+        gtag('event', 'submit_review', {
+          reviewer_type: f.yorumRol.value || 'Bilinmiyor',
+          service_type: f.yorumSinav.value || 'Bilinmiyor'
+        });
+      }
+      setTimeout(function(){ window.location.href = url; }, 250);
+    });
+
+    document.querySelectorAll('a[href*="wa.me/"]').forEach(function(link){
+      link.addEventListener('click', function(){
+        if (typeof gtag === 'function') {
+          gtag('event', 'whatsapp_click', {
+            link_location: this.closest('section')?.id || 'page',
+            link_url: this.href
+          });
+        }
+      });
     });
   </script>
 </body>
